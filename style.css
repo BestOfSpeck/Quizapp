@@ -29,6 +29,12 @@ body {
 .reply-card {
     background-color: #212529!important;
     color: white;
+    text-align: center;
+}
+
+.reply-card:hover {
+    background-color: #212529a4 !important;
+    cursor: pointer;
 }
 
 .btn-dark:hover {

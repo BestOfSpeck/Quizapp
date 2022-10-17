@@ -11,7 +11,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
 
     <nav class="navbar bg-light">
         <div class="container-fluid">
@@ -21,30 +21,30 @@
 
     <div class="container">
         <div class="card quiz-card">
-            <img src="img/question.jpg" class="card-img-top" alt="...">
+            <img src="img/question.jpg" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title card-title-color">Frage</h5>
+                <h5 class="card-title" id="questiontext">Frage</h5>
 
                 <div class="card mb-2 reply-card">
-                    <div class="card-body">
+                    <div class="card-body" id="answer_1" onclick="answer('answer_1')">
                         This is some text within a card body.
                     </div>
                 </div>
 
                 <div class="card mb-2 reply-card">
-                    <div class="card-body">
+                    <div class="card-body" id="answer_2" onclick="answer('answer_2')">
                         This is some text within a card body.
                     </div>
                 </div>
 
                 <div class="card mb-2 reply-card">
-                    <div class="card-body">
+                    <div class="card-body" id="answer_3" onclick="answer('answer_3')">
                         This is some text within a card body.
                     </div>
                 </div>
 
                 <div class="card mb-2 reply-card">
-                    <div class="card-body">
+                    <div class="card-body" id="answer_4" onclick="answer('answer_4')">
                         This is some text within a card body.
                     </div>
                 </div>
@@ -53,7 +53,7 @@
             <div class="question-footer">
 
                 <div>
-                    <b>1</b> von <b>5</b>
+                    <b>1</b> von <b id="all-questions">5</b>
                 </div>
 
                 <button class="btn btn-dark">Nächste Frage</button>
