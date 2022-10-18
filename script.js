@@ -86,7 +86,9 @@ function answer(selection) {
 
     }
 
+
     document.getElementById('next-button').disabled = false;
+    document.getElementById(`answer_${selection}`).disabled = false;
 
 }
 
