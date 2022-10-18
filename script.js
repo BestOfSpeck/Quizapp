@@ -64,7 +64,15 @@ function answer(selection) {
     let selectedQuestinaNumber = selection.slice(-1);
 
 
-    console.log('selected questiin number is ', selectedQuestinaNumber)
-    console.log('currend question is ', question)
-    console.log('Selected answer is ', selection)
+    console.log('selected questiin number is ', selectedQuestinaNumber);
+    console.log('currend question is ', question);
+    console.log('Selected answer is ', selection);
+
+    if (selectedQuestinaNumber == question['right_answer']) {
+        document.getElementById(selection).classList.add('bg-success');
+        console.log('die antwort ist richtig');
+    } else {
+        document.getElementById(selection).classList.add('bg-danger');
+        console.log('Die Antwort ist FALSCH');
+    }
 }

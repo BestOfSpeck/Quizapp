@@ -40,3 +40,8 @@ body {
 .btn-dark:hover {
     color: #212529;
 }
+
+.bg-success,
+.bg-danger {
+    border-radius: 5px;
+}
