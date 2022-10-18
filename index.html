@@ -22,7 +22,12 @@
     <div class="container">
         <div class="card quiz-card">
             <img src="img/question.jpg" class="card-img-top">
-            <div class="card-body">
+
+            <div class="card-body" id="endScreen" style="display:none ;">
+                Quiz Gewonnen!
+            </div>
+
+            <div class="card-body" id="question-body">
                 <h5 class="card-title" id="questiontext">Frage</h5>
 
                 <div class="card mb-2 reply-card">
@@ -49,10 +54,10 @@
             <div class="question-footer">
 
                 <div>
-                    <b>1</b> von <b id="all-questions">5</b>
+                    <b id="question-number">1</b> von <b id="all-questions">5</b>
                 </div>
 
-                <button class="btn btn-dark">Nächste Frage</button>
+                <button onclick="nextQuestion()" class="btn btn-dark" id="next-button" disabled>Nächste Frage</button>
             </div>
         </div>
     </div>

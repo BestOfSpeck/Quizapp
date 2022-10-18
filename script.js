@@ -47,32 +47,71 @@ function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
 
     showQuestion()
+
 }
+
 
 function showQuestion() {
-    let question = questions[currentQuestion];
 
-    document.getElementById('questiontext').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+    if (currentQuestion >= questions.length) {
+        document.getElementById('endScreen').style = '';
+        document.getElementById('question-body').style = 'display: none';
+    } else {
+
+        let question = questions[currentQuestion];
+
+        document.getElementById('question-number').innerHTML = currentQuestion + 1;
+        document.getElementById('questiontext').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
+
+    }
+
 }
+
 
 function answer(selection) {
     let question = questions[currentQuestion];
     let selectedQuestinaNumber = selection.slice(-1);
-
-
-    console.log('selected questiin number is ', selectedQuestinaNumber);
-    console.log('currend question is ', question);
-    console.log('Selected answer is ', selection);
+    let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (selectedQuestinaNumber == question['right_answer']) {
         document.getElementById(selection).classList.add('bg-success');
-        console.log('die antwort ist richtig');
+
     } else {
         document.getElementById(selection).classList.add('bg-danger');
-        console.log('Die Antwort ist FALSCH');
+        document.getElementById(idOfRightAnswer).classList.add('bg-success');
+
     }
+
+    document.getElementById('next-button').disabled = false;
+
+}
+
+
+function nextQuestion() {
+    currentQuestion++;
+    document.getElementById('next-button').disabled = true;
+    resetAnswerButtons();
+    showQuestion()
+
+
+
+
+}
+
+
+function resetAnswerButtons() {
+
+    document.getElementById('answer_1').classList.remove('bg-danger');
+    document.getElementById('answer_1').classList.remove('bg-success');
+    document.getElementById('answer_2').classList.remove('bg-danger');
+    document.getElementById('answer_2').classList.remove('bg-success');
+    document.getElementById('answer_3').classList.remove('bg-danger');
+    document.getElementById('answer_3').classList.remove('bg-success');
+    document.getElementById('answer_4').classList.remove('bg-danger');
+    document.getElementById('answer_4').classList.remove('bg-success');
+
 }
