@@ -22,10 +22,17 @@
 
     <div class="container">
         <div class="card quiz-card">
-            <img src="img/question.jpg" class="card-img-top">
+            <img src="img/question.jpg" id="header-img" class="card-img-top">
 
             <div class="card-body" id="endScreen" style="display:none ;">
-                Quiz Gewonnen!
+                <div class="text-center mb-2 final-headline">
+                    Quiz Gewonnen!
+                </div>
+
+                <div class="text-center mt-2">
+                    Du hast <b id="amount-of-right-questions">xxx</b> Fragen von <b id="amount-of-questions">xxx</b> richtig beantwortet.
+                </div>
+
             </div>
 
             <div class="card-body" id="question-body">

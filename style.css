@@ -69,3 +69,19 @@ body {
 .bg-danger {
     border-radius: 5px;
 }
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.endscreen-img {
+    border-radius: 50%;
+}
+
+.final-headline {
+    font-size: 50px;
+}
