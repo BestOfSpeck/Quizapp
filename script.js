@@ -54,13 +54,25 @@ function init() {
 function showQuestion() {
 
     if (currentQuestion >= questions.length) {
+        // Show End Screen
         document.getElementById('endScreen').style = '';
         document.getElementById('question-body').style = 'display: none';
 
         document.getElementById('amount-of-questions').innerHTML = questions.length;
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
         document.getElementById('header-img').src = 'img/trophy.png';
+
+        document.getElementById('progress-bar').style.width = `100%`;
+        document.getElementById('progress-bar').innerHTML = `100%`;
+
     } else {
+        // Show question
+
+        let percent = currentQuestion / questions.length;
+        percent = Math.round(percent * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style.width = `${percent}%`;
+
 
         let question = questions[currentQuestion];
 
